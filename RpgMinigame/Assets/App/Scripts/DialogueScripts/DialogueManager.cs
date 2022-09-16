@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DynamicBox.EventManagement;
+
 
 public class DialogueManager : MonoBehaviour
 {
@@ -17,9 +19,28 @@ public class DialogueManager : MonoBehaviour
   }
   #endregion
 
+  #region  Event Listeners
+  private void OnEnable() {
+    EventManager.Instance.AddListener<NextDialogueExistsEvent>(NextDialogueExistsEventHandler);
+  }
+  private void OnDisable() {
+    EventManager.Instance.RemoveListener<NextDialogueExistsEvent>(NextDialogueExistsEventHandler);
+  }
+  #endregion
+  //Common Parameters
   [HideInInspector] public bool isPlayerInDialogue;
+  
+  //Options Dialogue Parameters
+  [SerializeField] private GameObject dialogueOptionsUI;
 
+  //Basic Dialogue Parameters
   [SerializeField] private GameObject dialogueBox;
+  [SerializeField] GameObject[] optionButtons;
+  [SerializeField] private Text questionText;
+  private bool isPlayerInDialogueOption;
+  private int optionsAmount;
+  
+
   [SerializeField] private Text characterName;
   [SerializeField] private Text characterSpeech;
   [SerializeField] private Image characterPortrait;
@@ -59,7 +80,7 @@ public class DialogueManager : MonoBehaviour
   }
 
   public void EnqueueDialogue(DialogueBase db) {
-    if (isPlayerInDialogue) return;
+    if (isPlayerInDialogue || isPlayerInDialogueOption) return;
     
     buffer = true;
     isPlayerInDialogue = true;
@@ -75,14 +96,55 @@ public class DialogueManager : MonoBehaviour
     switch (currentDialogueType)
     {
       case DialogueType.BASIC:
-        foreach (DialogueBase.CharacterLine characterLine in db.characterLines) {
-          dialogueLinesQueue.Enqueue(characterLine);
-        }
+        BasicDialogueParser(currentDialogue);
         break;
       case DialogueType.OPTION:
+        BasicDialogueParser(currentDialogue);
+        // inDialogue inOptionDialogue
+        OptionsDialogueParser(currentDialogue);
         break;
     }
     DequeueDialogue();
+  }
+
+  private void BasicDialogueParser(DialogueBase dialogueBase) {
+    DialogueBase basicDialogue = dialogueBase;
+    foreach (DialogueBase.CharacterLine characterLine in basicDialogue.characterLines) {
+      dialogueLinesQueue.Enqueue(characterLine);
+    }
+  }
+  private void OptionsDialogueParser(DialogueBase dialogueBase) {
+    //OpenOptionsDialogue();
+
+    isPlayerInDialogueOption = true;
+    DialogueOptions dialogueWithOptions = dialogueBase as DialogueOptions;
+
+    questionText.text = dialogueWithOptions.questionText;
+    optionsAmount = dialogueWithOptions.options.Length;
+
+    optionButtons[0].GetComponent<Button>().Select();
+    //Clearing previous options if they are still active
+    for(int i = 0; i < optionButtons.Length; i++) {
+        optionButtons[i].SetActive(false);
+      }
+    for (int i = 0; i < optionsAmount; i++)
+    {
+      optionButtons[i].SetActive(true);
+      optionButtons[i].GetComponentInChildren<Text>().text = dialogueWithOptions.options[i].buttonName;
+
+      if(dialogueWithOptions.options[i].nextDialogue != null) {
+        optionButtons[i].GetComponent<OptionButton>().NextDialogue = dialogueWithOptions.options[i].nextDialogue;
+      }
+    }
+   // isPlayerInDialogueOption = false;
+  }
+  private void OpenOptionsDialogue() {
+    Debug.Log("!!!");
+    dialogueOptionsUI.SetActive(true);
+  }
+  private void CloseOptionsDialogue() {
+    isPlayerInDialogueOption = false;
+    dialogueOptionsUI.SetActive(false);
   }
 
   private void DequeueDialogue() {
@@ -145,5 +207,21 @@ public class DialogueManager : MonoBehaviour
 
   private void EndOfDialogue() {
     dialogueBox.SetActive(false);
+    OptionUIHandler();
   }
+  private void OptionUIHandler() {
+    if (isPlayerInDialogueOption == true) {
+      dialogueOptionsUI.SetActive(true);
+      //OpenOptionsDialogue();
+    } else {
+      isPlayerInDialogue = false;
+    }
+  }
+
+  #region Event Handlers
+  private void NextDialogueExistsEventHandler(NextDialogueExistsEvent eventDetails) {
+    CloseOptionsDialogue();
+    EnqueueDialogue(eventDetails.nextDialogue);
+  }
+  #endregion
 }

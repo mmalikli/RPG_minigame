@@ -9,14 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33628d3257c79ab9aa50292a182284ff, type: 3}
-  m_Name: TestDialogue
+  m_Script: {fileID: 11500000, guid: 0c8bf69a62eebf59089ec570225752af, type: 3}
+  m_Name: TestOptionDialogue
   m_EditorClassIdentifier: 
-  dialogueType: 0
+  dialogueType: 1
   characterLines:
   - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
-    text: Hello !
+    text: Greetings, traveller
   - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
-    text: Nice to meet you !
+    text: Unfortunatly, we can't serve you right now...
   - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
-    text: Unfortunatly we can't serve you because we have problems with monsters...
+    text: I wonder, what do you think abot our village
+  questionText: Are you satisfied by our Village ?
+  options:
+  - buttonName: Yes !
+    nextDialogue: {fileID: 11400000, guid: 621800e810b5eeecb872f2718baf7935, type: 2}
+  - buttonName: No !
+    nextDialogue: {fileID: 11400000, guid: c431f1bafa0f81b4bba2f70af5213500, type: 2}

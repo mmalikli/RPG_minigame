@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33628d3257c79ab9aa50292a182284ff, type: 3}
-  m_Name: TestDialogue
+  m_Name: TestOptionNo
   m_EditorClassIdentifier: 
   dialogueType: 0
   characterLines:
   - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
-    text: Hello !
+    text: Ahh what a pity....
   - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
-    text: Nice to meet you !
-  - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
-    text: Unfortunatly we can't serve you because we have problems with monsters...
+    text: Nowdays village is destroyed because of monsters...
