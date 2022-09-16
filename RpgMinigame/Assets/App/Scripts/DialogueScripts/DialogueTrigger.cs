@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  [Header("This NPC")]
+  [Tooltip("This is current NPC's profile")]
+  public CharacterProfile currentNPC;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+  public DialogueBase dialogueArray;
+
+  public override void Interact()
+  {
+    if(!DialogueManager.instance.isPlayerInDialogue) {
+      DialogueManager.instance.EnqueueDialogue(dialogueArray);
     }
+  }
+
 }

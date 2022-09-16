@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
 
   private void LateUpdate() {
     if(Vector2.Distance(gameObject.transform.position, GameManager.instance.player.position ) < interactRange) {
-      if(Input.GetMouseButton(1)) {
+      if(Input.GetKeyDown(KeyCode.I)) {
         Interact();
       }
     }

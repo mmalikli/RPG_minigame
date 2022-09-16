@@ -5,8 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue/Basic Dialogue")]
 public class DialogueBase : ScriptableObject
 {
+  public DialogueType dialogueType;
+
   [System.Serializable]
-  public class Info {
+  public class CharacterLine {
     public CharacterProfile character;
 
     // character speech;
@@ -16,5 +18,5 @@ public class DialogueBase : ScriptableObject
 
   [Header("Insert Dialogue Information")]
   // For having several dialogues
-  public Info[] dialogue;
+  public CharacterLine[] characterLines;
 }

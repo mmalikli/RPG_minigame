@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class AudioManger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+  #region  Audio Manager Singleton
+  public static AudioManger instance;
+
+  private void Awake() {
+    if (instance == null) {
+      instance = this;
+    } else {
+      Destroy(instance.gameObject);
     }
+  }
+  #endregion
+
+  [SerializeField] private AudioSource audioSource;
+
+  ///<summary>
+  /// This method is used to play character Talk Sound
+  ///</summary>
+  public void PlayClip(AudioClip clip) {
+    audioSource.PlayOneShot(clip);
+  }
 }
