@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Profile", menuName = "Character Profile")]
+[CreateAssetMenu(fileName = "New Profile", menuName = "Profiles/Character")]
 public class CharacterProfile : ScriptableObject
 {
   public Sprite characterPortrait;

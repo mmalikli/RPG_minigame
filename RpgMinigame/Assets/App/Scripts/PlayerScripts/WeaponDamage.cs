@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class WeaponDamage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+  private int hitAmount = 1;
+  private void OnTriggerEnter2D(Collider2D other) {
+    if (other.gameObject.tag == "Enemy" && hitAmount > 0) {
+      Debug.Log("!!!");
+      hitAmount--;
+      other.GetComponent<BaseEnemy>().TakeDamage(25);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  }
+  private void OnTriggerExit2D(Collider2D other) {
+    if(hitAmount==0) hitAmount++;
+  }
 }
