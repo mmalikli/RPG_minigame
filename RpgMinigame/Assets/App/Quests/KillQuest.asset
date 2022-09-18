@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb447a2333a511cfc9bd9ca8dd667f3d, type: 3}
   m_Name: KillQuest
   m_EditorClassIdentifier: 
-  questName: 
-  questDescription: 
+  questName: The Great Slime Slayer
+  questDescription: To Help Claris you should kill two slimes
   objectives:
   - requiredEnemy: {fileID: 11400000, guid: 16b7796e7c590c2b29b1fac543c78f02, type: 2}
-    requiredAmount: 1
+    requiredAmount: 2

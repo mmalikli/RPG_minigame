@@ -17,16 +17,22 @@ public class QuestBaseSO : ScriptableObject
   public bool IsCompleted { get; set; }
 
   public virtual void StartQuest() {
+
     CurrentAmount = new int[RequiredAmount.Length];
+
   }
 
   protected void Evaluate() {
+    //Debug.Log("Required Amount from Evaluate"+RequiredAmount[0]);
+    //Debug.Log("Current Amount from Evaluate"+CurrentAmount[0]);
     for (int i = 0; i < RequiredAmount.Length; i++)
     {
       if(CurrentAmount[i]< RequiredAmount[i]) return;
+      else if (CurrentAmount[i] != 0 && CurrentAmount[i] == RequiredAmount[i]) {
+        Debug.Log("Quest is Completed");
+      }
     }
 
-    Debug.Log("Quest is Completed");
   }
 
 }

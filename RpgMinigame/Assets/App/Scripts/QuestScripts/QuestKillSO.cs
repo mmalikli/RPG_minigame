@@ -22,6 +22,9 @@ public class QuestKillSO : QuestBaseSO
   public Objective[] objectives;
 
   public override void StartQuest() {
+    //Debug.Log("Quest Started QK_SO");
+    if(objectives.Length == 0) return;
+
     RequiredAmount = new int[objectives.Length];
     
     for(int i = 0; i<objectives.Length; i++) {

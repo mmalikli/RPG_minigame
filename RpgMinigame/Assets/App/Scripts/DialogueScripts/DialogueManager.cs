@@ -85,7 +85,8 @@ public class DialogueManager : MonoBehaviour
     buffer = true;
     isPlayerInDialogue = true;
     dialogueLinesQueue.Clear();
-    StartCoroutine(BufferTimer());
+    //StartCoroutine(BufferTimer());
+    bufferTimeCoroutine = StartCoroutine(BufferTimer());
 
     //Dialogue Start
     dialogueBox.SetActive(true);
@@ -102,6 +103,11 @@ public class DialogueManager : MonoBehaviour
         BasicDialogueParser(currentDialogue);
         // inDialogue inOptionDialogue
         OptionsDialogueParser(currentDialogue);
+        break;
+      case DialogueType.QUEST:
+        BasicDialogueParser(currentDialogue);
+        //Note: rewrite it as ?? Async task ??
+        StartCoroutine(QuestDialogueParser(currentDialogue));
         break;
     }
     DequeueDialogue();
@@ -138,6 +144,15 @@ public class DialogueManager : MonoBehaviour
     }
    // isPlayerInDialogueOption = false;
   }
+  private IEnumerator QuestDialogueParser(DialogueBase db) {
+    // I created this statement to make the code more reliable
+    yield return new WaitUntil(() => dialogueBox.activeSelf == false);
+    if(currentDialogue is DialogueQuestSO) {
+      DialogueQuestSO DQ = currentDialogue as DialogueQuestSO;
+      Debug.Log("Event raised");
+      EventManager.Instance.Raise(new OnQuestReceivedEvent(DQ.quest));
+    }
+  }
   private void OpenOptionsDialogue() {
     Debug.Log("!!!");
     dialogueOptionsUI.SetActive(true);
@@ -151,8 +166,9 @@ public class DialogueManager : MonoBehaviour
     if (isCurrentlyTyping == true) {
       if (buffer == true) return;
       CompleteText();
-      StopAllCoroutines();
-      //StopCoroutine(typingTextCoroutine);
+      //StopAllCoroutines();
+      StopCoroutine(bufferTimeCoroutine);
+      StopCoroutine(typingTextCoroutine);
 
       isCurrentlyTyping = false;
       return;
@@ -175,7 +191,7 @@ public class DialogueManager : MonoBehaviour
 
     characterSpeech.text = "";
 
-    StartCoroutine(TypeText(characterLine));
+    typingTextCoroutine = StartCoroutine(TypeText(characterLine));
   }
 
   private IEnumerator TypeText(DialogueBase.CharacterLine dequeuedCharacterLine) {
