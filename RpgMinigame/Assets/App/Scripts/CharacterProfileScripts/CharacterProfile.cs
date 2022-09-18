@@ -48,9 +48,3 @@ public class CharacterProfile : ScriptableObject
     }
   }
 }
-
-public enum EmotionType {
-  Standard,
-  Happy,
-  Angry,
-}

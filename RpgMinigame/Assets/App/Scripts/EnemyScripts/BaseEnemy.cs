@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DynamicBox.EventManagement;
 
 public class BaseEnemy : MonoBehaviour
 {
@@ -50,5 +51,6 @@ public class BaseEnemy : MonoBehaviour
   private void Death() {
     //if()
     gameObject.SetActive(false);
+    EventManager.Instance.Raise(new OnEnemyDeathEvent(enemyProfile));
   }
 }
