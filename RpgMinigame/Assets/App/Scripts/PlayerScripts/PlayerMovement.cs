@@ -17,6 +17,9 @@ namespace Rpg.Player {
 
     private void Move() {
       Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+      if(DialogueManager.instance.isPlayerInDialogue || DialogueManager.instance.isPlayerInDialogueOption) {
+        movement = Vector2.zero;
+      }
       // Player is Attacking
       if(Input.GetMouseButton(0)) {
         anim.SetBool("isAttacking", true);

@@ -12,7 +12,7 @@ public class DialogueTrigger : Interactable
 
   public override void Interact()
   {
-    if(!DialogueManager.instance.isPlayerInDialogue) {
+    if(!DialogueManager.instance.isPlayerInDialogue || !DialogueManager.instance.isPlayerInDialogueOption) {
       DialogueManager.instance.EnqueueDialogue(dialogueArray);
     }
   }

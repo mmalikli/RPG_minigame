@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour
   [SerializeField] private GameObject dialogueBox;
   [SerializeField] GameObject[] optionButtons;
   [SerializeField] private Text questionText;
-  private bool isPlayerInDialogueOption;
+  public bool isPlayerInDialogueOption;
   private int optionsAmount;
   
 
@@ -168,8 +168,10 @@ public class DialogueManager : MonoBehaviour
     completeText = characterLine.text;
 
     characterName.text = characterLine.character.characterName;
-    characterPortrait.sprite = characterLine.character.characterPortrait;
+    characterLine.ChangeEmotion();
+    characterPortrait.sprite = characterLine.character.CharacterPortrait;
     //characterSpeech.text = characterLine.text;
+
 
     characterSpeech.text = "";
 
@@ -191,7 +193,7 @@ public class DialogueManager : MonoBehaviour
     isCurrentlyTyping = false;
   }
   private IEnumerator BufferTimer() {
-    yield return new WaitForSeconds(0.1f);
+    yield return new WaitForSeconds(0.2f);
     buffer = false;
   }
   private bool AddPunctuationDelay(char c) {

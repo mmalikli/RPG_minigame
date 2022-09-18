@@ -14,6 +14,11 @@ public class DialogueBase : ScriptableObject
     // character speech;
     [TextArea(2,12)]
     public string text;
+
+    public EmotionType characterEmotion;
+    public void ChangeEmotion() {
+      character.Emotion = characterEmotion;
+    }
   }
 
   [Header("Insert Dialogue Information")]
