@@ -140,7 +140,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -620215297
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1183270191
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 5779718187238873461}
   - component: {fileID: 4813880310774161513}
   - component: {fileID: 6597467995709079712}
-  - component: {fileID: 5403118581040786585}
+  - component: {fileID: 1488858258}
   m_Layer: 0
   m_Name: slime_0
   m_TagString: Untagged
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmountText: 0
   enemyProfile: {fileID: 11400000, guid: 16b7796e7c590c2b29b1fac543c78f02, type: 2}
---- !u!58 &5403118581040786585
+--- !u!58 &1488858258
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,4 +328,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.45

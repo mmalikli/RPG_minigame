@@ -21,17 +21,22 @@ public class QuestUIController : MonoBehaviour
 
   public void OnQuestAcceptedButton() {
     questUIView.CloseQuestUI();
-    Debug.Log(currentQuestHolder.questName);
+    QuestManager.instance.InQuestUI = false;
+    
     EventManager.Instance.Raise(new OnQuestAcceptedEvent(currentQuestHolder));  
+    
+    //Debug.Log(currentQuestHolder.questName);
 
   }
   public void OnQuestDeclinedButton() {
     currentQuestHolder = null;
     // I don't need the OnQuestDeclinedEvent right now...
     questUIView.CloseQuestUI();
+    QuestManager.instance.InQuestUI = false;
   }
 
   private void OnQuestReceivedEventHandler(OnQuestReceivedEvent eventDetails) {
+    QuestManager.instance.InQuestUI = true;
     currentQuestHolder = eventDetails.receivedQuest;
     questUIView.SetQuestUI(currentQuestHolder);
   }

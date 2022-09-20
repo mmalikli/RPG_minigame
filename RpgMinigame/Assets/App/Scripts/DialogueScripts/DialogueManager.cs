@@ -80,7 +80,7 @@ public class DialogueManager : MonoBehaviour
   }
 
   public void EnqueueDialogue(DialogueBase db) {
-    if (isPlayerInDialogue || isPlayerInDialogueOption) return;
+    if (isPlayerInDialogue || isPlayerInDialogueOption || QuestManager.instance.InQuestUI) return;
     
     buffer = true;
     isPlayerInDialogue = true;

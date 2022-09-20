@@ -10,7 +10,11 @@ public class GameManager : MonoBehaviour
     if(instance == null) {
       instance = this;
     }
+
+    allDialogueTriggers = FindObjectsOfType<DialogueTrigger>();
   }
 
   public Transform player;
+
+  public DialogueTrigger[] allDialogueTriggers;
 }

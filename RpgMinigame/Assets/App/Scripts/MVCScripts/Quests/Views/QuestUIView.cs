@@ -21,6 +21,8 @@ public class QuestUIView : MonoBehaviour
 
   public void SetQuestUI(QuestBaseSO newQuest) {
     //quest = newQuest;
+  //QuestManager.instance.InQuestUI = true;
+  QuestManager.instance.InQuestUI = true;
 
     questUI.SetActive(true);
     questName.text = newQuest.questName;
@@ -34,6 +36,7 @@ public class QuestUIView : MonoBehaviour
   }
 
   public void CloseQuestUI() {
+    QuestManager.instance.InQuestUI = false;
     questUI.SetActive(false);
   }
 }

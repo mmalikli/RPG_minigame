@@ -17,9 +17,12 @@ namespace Rpg.Player {
 
     private void Move() {
       Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
-      if(DialogueManager.instance.isPlayerInDialogue || DialogueManager.instance.isPlayerInDialogueOption) {
+      if(DialogueManager.instance.isPlayerInDialogue || DialogueManager.instance.isPlayerInDialogueOption || QuestManager.instance.InQuestUI) {
         movement = Vector2.zero;
-      }
+        anim.SetBool("isAttacking", false);
+
+      } else {
+
       // Player is Attacking
       if(Input.GetMouseButton(0)) {
         anim.SetBool("isAttacking", true);
@@ -33,6 +36,7 @@ namespace Rpg.Player {
         anim.SetBool("isWalking", false);
       }
       rigidBody.MovePosition(rigidBody.position + movement.normalized*speed*Time.fixedDeltaTime);
+      }
     }
   }
 }
