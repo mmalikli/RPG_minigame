@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SlimeComplete
   m_EditorClassIdentifier: 
   dialogueType: 3
+  completedQuest: {fileID: 11400000, guid: 859739f1bf38419d8be8cde8134ca6be, type: 2}
   characterLines:
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
     text: Wow...

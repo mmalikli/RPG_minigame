@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8bf69a62eebf59089ec570225752af, type: 3}
+  m_Name: TestOptionDialogue
+  m_EditorClassIdentifier: 
+  dialogueType: 1
+  completedQuest: {fileID: 0}
+  characterLines:
+  - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
+    text: Greetings, traveller !
+    characterEmotion: 0
+  - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
+    text: As you can see, things are not going well for us.
+    characterEmotion: 0
+  - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
+    text: I wonder what you think of our little village ?
+    characterEmotion: 0
+  questionText: Do you like being here ?
+  options:
+  - buttonName: Yes !
+    nextDialogue: {fileID: 11400000, guid: 3011042ab08283c569ccf57760991df8, type: 2}
+  - buttonName: Actually, no...
+    nextDialogue: {fileID: 11400000, guid: db7b6e80c2f6d76ffba2c62a47565720, type: 2}

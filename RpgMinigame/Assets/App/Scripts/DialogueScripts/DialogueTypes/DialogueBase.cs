@@ -6,6 +6,9 @@ using UnityEngine;
 public class DialogueBase : ScriptableObject
 {
   public DialogueType dialogueType;
+  //If dialogue if Quest Completion dialogue
+  [Tooltip("If it is Quest Completion Dialogue Please specify the quest")]
+  public QuestBaseSO completedQuest;
 
   [System.Serializable]
   public class CharacterLine {

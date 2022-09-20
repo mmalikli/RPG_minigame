@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: TestQuestClaris
   m_EditorClassIdentifier: 
   dialogueType: 2
+  completedQuest: {fileID: 0}
   characterLines:
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
-    text: Can you help me ?...
+    text: Hello ! I guess my father send you ? Can you help me ?
     characterEmotion: 0
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
-    text: Please kill two slimes...
+    text: Please kill this two slimes...
     characterEmotion: 2
   quest: {fileID: 11400000, guid: 859739f1bf38419d8be8cde8134ca6be, type: 2}

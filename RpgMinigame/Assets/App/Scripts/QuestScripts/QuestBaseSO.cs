@@ -6,13 +6,13 @@ using DynamicBox.EventManagement;
 public class QuestBaseSO : ScriptableObject
 {
 
-  // private void OnEnable() {
-  //   //Debug.Log("Hello");
-  //   EventManager.Instance.AddListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler); 
-  // }
-  // private void OnDisable() {
-  //   EventManager.Instance.AddListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler);
-  // }
+  private void OnEnable() {
+    //Debug.Log("Hello");
+    EventManager.Instance.AddListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler); 
+  }
+  private void OnDisable() {
+    EventManager.Instance.AddListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler);
+  }
 
   public string questName;
 
@@ -66,10 +66,10 @@ public class QuestBaseSO : ScriptableObject
     }
   }
 
-  // private void OnQuestCompletedEventHandler(OnQuestCompletedEvent eventDetails) {
-  //   Debug.Log("OnQuestRewardClaimed Event Raised");
-  //   Debug.Log(rewards.itemReward.itemName);
-  //   EventManager.Instance.Raise(new OnQuestRewardClaimedEvent(questName,rewards.itemReward,0,0));
-  // }
+  private void OnQuestCompletedEventHandler(OnQuestCompletedEvent eventDetails) {
+    Debug.Log("OnQuestRewardClaimed Event Raised");
+    Debug.Log(rewards.itemReward.itemName);
+    EventManager.Instance.Raise(new OnQuestRewardClaimedEvent(questName,rewards.itemReward,0,0));
+  }
 
 }

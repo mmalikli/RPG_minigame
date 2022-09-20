@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33628d3257c79ab9aa50292a182284ff, type: 3}
-  m_Name: ClirisSlime
+  m_Name: OptionAnwYes
   m_EditorClassIdentifier: 
   dialogueType: 0
   completedQuest: {fileID: 0}
   characterLines:
-  - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
-    text: Did you kill the Slimes already ?
+  - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
+    text: Ah.. You really think that..Nice to hear this !
+    characterEmotion: 0
+  - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
+    text: Nowdays life is tought in our villlage..Please ask Claris she will need
+      some help.
     characterEmotion: 0

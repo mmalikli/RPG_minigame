@@ -56,7 +56,7 @@ public class DialogueManager : MonoBehaviour
   private bool buffer;
   private string completeText;
 
-  private DialogueBase currentDialogue;
+  [SerializeField] private DialogueBase currentDialogue;
 
   #region Coroutines
   Coroutine typingTextCoroutine;
@@ -90,6 +90,8 @@ public class DialogueManager : MonoBehaviour
 
     //Dialogue Start
     dialogueBox.SetActive(true);
+
+    //currentDialogue == null;
 
     currentDialogue = db;
     currentDialogueType = db.dialogueType;//Basic, Options, Quest;
@@ -146,7 +148,7 @@ public class DialogueManager : MonoBehaviour
         optionButtons[i].GetComponent<OptionButton>().NextDialogue = dialogueWithOptions.options[i].nextDialogue;
       }
     }
-   // isPlayerInDialogueOption = false;
+   //isPlayerInDialogueOption = false;
   }
   private IEnumerator QuestDialogueParser(DialogueBase db) {
     // I created this statement to make the code more reliable
@@ -160,7 +162,7 @@ public class DialogueManager : MonoBehaviour
   private IEnumerator QuestCompleted() {
     yield return new WaitUntil(() => dialogueBox.activeSelf == false);
     Debug.Log("Quest Complete Event Raised");
-    EventManager.Instance.Raise(new OnQuestCompletedEvent());
+    EventManager.Instance.Raise(new OnQuestCompletedEvent(currentDialogue.completedQuest));
   }
   private void OpenOptionsDialogue() {
     Debug.Log("!!!");
@@ -184,6 +186,7 @@ public class DialogueManager : MonoBehaviour
     }
     if(dialogueLinesQueue.Count == 0) {
       isPlayerInDialogue = false;
+      //Debug.Log("Quest finished");
       EndOfDialogue();
       return;
     }
@@ -218,7 +221,7 @@ public class DialogueManager : MonoBehaviour
     isCurrentlyTyping = false;
   }
   private IEnumerator BufferTimer() {
-    yield return new WaitForSeconds(0.2f);
+    yield return new WaitForSeconds(1f);
     buffer = false;
   }
   private bool AddPunctuationDelay(char c) {
@@ -242,12 +245,15 @@ public class DialogueManager : MonoBehaviour
       //OpenOptionsDialogue();
     } else {
       isPlayerInDialogue = false;
+      return;
     }
   }
 
   #region Event Handlers
   private void NextDialogueExistsEventHandler(NextDialogueExistsEvent eventDetails) {
     CloseOptionsDialogue();
+    Debug.Log("text loaded");
+
     EnqueueDialogue(eventDetails.nextDialogue);
   }
   #endregion
