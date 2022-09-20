@@ -16,6 +16,10 @@ MonoBehaviour:
   questDescription: Help Claris and kill two slimes
   questGivenNPC: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
   completedQuestDialogue: {fileID: 11400000, guid: 822c7f196b3a963dbb3623e628a7ffe2, type: 2}
+  rewards:
+    itemReward: {fileID: 11400000, guid: d53964f2669965f7da1934756e9ae0f1, type: 2}
+    experienceReward: 0
+    goldReward: 0
   objectives:
   - requiredEnemy: {fileID: 11400000, guid: 16b7796e7c590c2b29b1fac543c78f02, type: 2}
     requiredAmount: 2

@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DynamicBox.EventManagement;
 
 public class QuestBaseSO : ScriptableObject
 {
+
+  // private void OnEnable() {
+  //   //Debug.Log("Hello");
+  //   EventManager.Instance.AddListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler); 
+  // }
+  // private void OnDisable() {
+  //   EventManager.Instance.AddListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler);
+  // }
 
   public string questName;
 
@@ -11,7 +20,7 @@ public class QuestBaseSO : ScriptableObject
   public string questDescription;
   // NOTE: THIS WORKS FOR ONLY ONE ENEMY TYPE!!!!
 
-  
+
   // Current Amount shows us a progress of our quest
   public int[] CurrentAmount { get; set; }
   // Required Amount shows us a required amount of monsters
@@ -22,7 +31,13 @@ public class QuestBaseSO : ScriptableObject
   public CharacterProfile questGivenNPC;//???
   public DialogueBase completedQuestDialogue;
 
-
+  [System.Serializable]
+  public class QuestRewards {
+    public ItemBaseSO itemReward;
+    public int experienceReward;
+    public int goldReward;
+  }
+  public QuestRewards rewards;
 
   public virtual void StartQuest() {
 
@@ -49,7 +64,12 @@ public class QuestBaseSO : ScriptableObject
         }
       }
     }
-
   }
+
+  // private void OnQuestCompletedEventHandler(OnQuestCompletedEvent eventDetails) {
+  //   Debug.Log("OnQuestRewardClaimed Event Raised");
+  //   Debug.Log(rewards.itemReward.itemName);
+  //   EventManager.Instance.Raise(new OnQuestRewardClaimedEvent(questName,rewards.itemReward,0,0));
+  // }
 
 }

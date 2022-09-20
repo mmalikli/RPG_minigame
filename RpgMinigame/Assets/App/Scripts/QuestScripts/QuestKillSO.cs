@@ -8,10 +8,12 @@ public class QuestKillSO : QuestBaseSO
 {
   private void OnEnable() {
     //Debug.Log("Kill Quest!!!");
+    EventManager.Instance.AddListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler); 
     EventManager.Instance.AddListener<OnEnemyDeathEvent>(OnEnemyDeathEventHandler);
   }
   private void OnDisable() {
-
+    EventManager.Instance.RemoveListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler);
+    EventManager.Instance.RemoveListener<OnEnemyDeathEvent>(OnEnemyDeathEventHandler);
   }
   [System.Serializable]
   public class Objective {
@@ -41,6 +43,13 @@ public class QuestKillSO : QuestBaseSO
       }
     }
     Evaluate();
+  }
+
+  //private
+  private void OnQuestCompletedEventHandler(OnQuestCompletedEvent eventDetails) {
+    Debug.Log("OnQuestRewardClaimed Event Raised");
+    Debug.Log(rewards.itemReward.itemName);
+    EventManager.Instance.Raise(new OnQuestRewardClaimedEvent(questName,rewards.itemReward,0,0));
   }
 }
 

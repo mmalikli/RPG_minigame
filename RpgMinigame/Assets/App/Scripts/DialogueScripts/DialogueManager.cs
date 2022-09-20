@@ -109,6 +109,10 @@ public class DialogueManager : MonoBehaviour
         //Note: rewrite it as ?? Async task ??
         StartCoroutine(QuestDialogueParser(currentDialogue));
         break;
+      case DialogueType.QUEST_COMPLETION:
+        BasicDialogueParser(currentDialogue);
+        StartCoroutine(QuestCompleted());
+        break;
     }
     DequeueDialogue();
   }
@@ -152,6 +156,11 @@ public class DialogueManager : MonoBehaviour
       Debug.Log("Event raised");
       EventManager.Instance.Raise(new OnQuestReceivedEvent(DQ.quest));
     }
+  }
+  private IEnumerator QuestCompleted() {
+    yield return new WaitUntil(() => dialogueBox.activeSelf == false);
+    Debug.Log("Quest Complete Event Raised");
+    EventManager.Instance.Raise(new OnQuestCompletedEvent());
   }
   private void OpenOptionsDialogue() {
     Debug.Log("!!!");

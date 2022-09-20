@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Items/Weapon")]
-public class WeaponSo : ItemBaseSO
+public class WeaponSO : ItemBaseSO
 {
   public int damage;
 }

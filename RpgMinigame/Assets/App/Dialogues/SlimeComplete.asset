@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33628d3257c79ab9aa50292a182284ff, type: 3}
   m_Name: SlimeComplete
   m_EditorClassIdentifier: 
-  dialogueType: 0
+  dialogueType: 3
   characterLines:
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
     text: Wow...
