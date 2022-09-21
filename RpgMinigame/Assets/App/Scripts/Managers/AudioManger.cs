@@ -29,19 +29,18 @@ public class AudioManger : MonoBehaviour
 
 
 
-    void Start()
-    {
-        if (PlayerPrefs.HasKey("Music"))
-        {
-            theMixer.SetFloat("Music", PlayerPrefs.GetFloat("Music"));
+    void Start() {
+    //     if (PlayerPrefs.HasKey("Music"))
+    //     {
+    //         theMixer.SetFloat("Music", PlayerPrefs.GetFloat("Music"));
 
-        }
+    //     }
 
-        if (PlayerPrefs.HasKey("SFX"))
-        {
-            theMixer.SetFloat("SFX", PlayerPrefs.GetFloat("SFX"));
+    //     if (PlayerPrefs.HasKey("SFX"))
+    //     {
+    //         theMixer.SetFloat("SFX", PlayerPrefs.GetFloat("SFX"));
 
-        }
+    //     }
     }
     public void PlayClip(AudioClip clip) {
     audioSource.PlayOneShot(clip);
