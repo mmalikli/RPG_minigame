@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManger : MonoBehaviour
 {
@@ -19,10 +20,30 @@ public class AudioManger : MonoBehaviour
 
   [SerializeField] private AudioSource audioSource;
 
-  ///<summary>
-  /// This method is used to play character Talk Sound
-  ///</summary>
-  public void PlayClip(AudioClip clip) {
+    ///<summary>
+    /// This method is used to play character Talk Sound
+    ///</summary>
+    ///
+
+    public AudioMixer theMixer;
+
+
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("Music"))
+        {
+            theMixer.SetFloat("Music", PlayerPrefs.GetFloat("Music"));
+
+        }
+
+        if (PlayerPrefs.HasKey("SFX"))
+        {
+            theMixer.SetFloat("SFX", PlayerPrefs.GetFloat("SFX"));
+
+        }
+    }
+    public void PlayClip(AudioClip clip) {
     audioSource.PlayOneShot(clip);
   }
 }

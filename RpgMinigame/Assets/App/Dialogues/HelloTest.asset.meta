@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:RpgMinigame/Assets/App/Dialogues/HelloTest.asset.meta
 guid: 505e97566322907f1a50859c0c578b95
+========
+guid: 0d573fa2a669c254cbf5f7e81d57562c
+>>>>>>>> development:RpgMinigame/Assets/App/SFX/MenuSFX/Main Mixer.mixer.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 11400000
+  mainObjectFileID: 24100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
