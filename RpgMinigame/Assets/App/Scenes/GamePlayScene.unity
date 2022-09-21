@@ -6663,7 +6663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRange: 1.2
   currentNPC: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
-  dialogueArray: {fileID: 11400000, guid: be74e716a95a1e531ba90b95aa7aefd4, type: 2}
+  dialogueArray: {fileID: 11400000, guid: 1763374445ebc7cd1a7bc3704df492d1, type: 2}
 --- !u!1 &599681173
 GameObject:
   m_ObjectHideFlags: 0
@@ -11812,6 +11812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1279865582}
+  theMixer: {fileID: 0}
 --- !u!82 &1279865582
 AudioSource:
   m_ObjectHideFlags: 0
