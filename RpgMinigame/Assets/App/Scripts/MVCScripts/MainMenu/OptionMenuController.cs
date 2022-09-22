@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using OptMenuView;
 using DynamicBox.EventManagement;
@@ -10,8 +11,7 @@ namespace OptMenuController {
   {
     [Header("View reference")]
     [SerializeField] private OptionMenuView optionMenuView;
-
-
+    
     private void OnEnable() {
       EventManager.Instance.AddListener<OnSaveSettingsExistsEvent>(OnSaveSettingsExistsEventHandler); 
     } 
