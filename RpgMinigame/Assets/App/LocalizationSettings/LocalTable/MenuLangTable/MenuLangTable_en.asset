@@ -54,5 +54,9 @@ MonoBehaviour:
     m_Localized: Dark Lands
     m_Metadata:
       m_Items: []
+  - m_Id: 367854350512128
+    m_Localized: SFX Volume
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
