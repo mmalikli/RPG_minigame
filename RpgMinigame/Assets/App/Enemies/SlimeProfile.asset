@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbaa42ee79909f0a88cff1e09a1483ed, type: 3}
   m_Name: SlimeProfile
   m_EditorClassIdentifier: 
-  health: 100
+  health: 10
   damage: 5

@@ -38,7 +38,7 @@ public class BaseEnemy : MonoBehaviour
   private void OnTriggerEnter2D(Collider2D other) {
     //Debug.Log(isAlive);
     if(other.gameObject.CompareTag("Player") && dealDamage && other.isTrigger) {
-      TakeDamage(25);
+      TakeDamage(GameManager.instance.playerDamage);
       dealDamage = false;
       //StartCoroutine(damageDealBuffer());
     }

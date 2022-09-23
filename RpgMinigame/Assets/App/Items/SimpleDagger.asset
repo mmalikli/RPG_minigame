@@ -16,4 +16,4 @@ MonoBehaviour:
   itemDescription: Your first dagger
   itemIcon: {fileID: 1173435412654150894, guid: f679ca705612c103e8f9a39c22359e24, type: 3}
   maxStackSize: 1
-  damage: 0
+  damage: 1

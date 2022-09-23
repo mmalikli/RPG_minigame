@@ -70,11 +70,12 @@ public class InventoryView : MonoBehaviour
   public void SetItemDescription(ItemBaseSO selectedItem) {
     //descriptionBox.SetActive(true);
     if(selectedItem == null) return;
+    Debug.Log(selectedItem.damage);
     itemName.text = selectedItem.itemName;
     itemDescription.text = selectedItem.itemDescription;
   }
-  public void OnEquipButtonPressed() {
-    inventoryController.OnEquipButtonPressed();
+  public void OnEquipButtonPressed(ItemBaseSO equippedItem) {
+    inventoryController.OnEquipButtonPressed(equippedItem);
   }
 
   // private void Update() {

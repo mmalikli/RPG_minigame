@@ -441,6 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d21bea492f2590e901a3d26207ddf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDamage: 0
   player: {fileID: 578979820}
   allDialogueTriggers: []
 --- !u!1 &94495082
@@ -751,6 +752,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1835098260}
     m_Modifications:
+    - target: {fileID: 1483862963514961750, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
+      propertyPath: equipButton
+      value: 
+      objectReference: {fileID: 328464414}
     - target: {fileID: 3797893322465194680, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
       propertyPath: m_Name
       value: Button - InventorySlot
@@ -848,6 +853,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1835098260}
     m_Modifications:
+    - target: {fileID: 1483862963514961750, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
+      propertyPath: equipButton
+      value: 
+      objectReference: {fileID: 328464414}
     - target: {fileID: 3797893322465194680, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
       propertyPath: m_Name
       value: Button - InventorySlot (3)
@@ -1281,6 +1290,7 @@ GameObject:
   - component: {fileID: 328464416}
   - component: {fileID: 328464415}
   - component: {fileID: 328464414}
+  - component: {fileID: 328464417}
   m_Layer: 5
   m_Name: EquipButton
   m_TagString: Untagged
@@ -1352,9 +1362,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1195156209}
-        m_TargetAssemblyTypeName: InventoryView, Assembly-CSharp
-        m_MethodName: OnEquipButtonPressed
+      - m_Target: {fileID: 328464417}
+        m_TargetAssemblyTypeName: EqupButtonHelper, Assembly-CSharp
+        m_MethodName: OnEquipButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1402,6 +1412,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328464412}
   m_CullTransparentMesh: 1
+--- !u!114 &328464417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328464412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc40788b67a6c94358eb350cf23f6f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedItem: {fileID: 0}
 --- !u!1 &347673010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6454,6 +6477,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1835098260}
     m_Modifications:
+    - target: {fileID: 1483862963514961750, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
+      propertyPath: equipButton
+      value: 
+      objectReference: {fileID: 328464414}
     - target: {fileID: 3797893322465194680, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
       propertyPath: m_Name
       value: Button - InventorySlot (5)
@@ -8218,6 +8245,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1835098260}
     m_Modifications:
+    - target: {fileID: 1483862963514961750, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
+      propertyPath: equipButton
+      value: 
+      objectReference: {fileID: 328464414}
     - target: {fileID: 3797893322465194680, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
       propertyPath: m_Name
       value: Button - InventorySlot (1)
@@ -13446,6 +13477,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1835098260}
     m_Modifications:
+    - target: {fileID: 1483862963514961750, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
+      propertyPath: equipButton
+      value: 
+      objectReference: {fileID: 328464414}
     - target: {fileID: 3797893322465194680, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
       propertyPath: m_Name
       value: Button - InventorySlot (2)
@@ -15433,6 +15468,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1835098260}
     m_Modifications:
+    - target: {fileID: 1483862963514961750, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
+      propertyPath: equipButton
+      value: 
+      objectReference: {fileID: 328464414}
     - target: {fileID: 3797893322465194680, guid: 30ffe17052b35bc658be02603a20b095, type: 3}
       propertyPath: m_Name
       value: Button - InventorySlot (4)

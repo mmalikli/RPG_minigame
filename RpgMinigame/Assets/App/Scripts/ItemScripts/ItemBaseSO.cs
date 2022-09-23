@@ -10,4 +10,6 @@ public class ItemBaseSO : ScriptableObject
 
   public int maxStackSize = 1;
 
+  public int damage;
+
 }

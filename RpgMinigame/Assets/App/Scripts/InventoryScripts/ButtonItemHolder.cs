@@ -7,6 +7,7 @@ public class ButtonItemHolder : MonoBehaviour
 {
   [SerializeField] private Image itemIcon;
   [SerializeField] private Text itemName;
+  [SerializeField] private Button equipButton;
 
 
   public ItemBaseSO itemInSlot;
@@ -28,5 +29,11 @@ public class ButtonItemHolder : MonoBehaviour
   public void OnButtonClick() {
     InventoryView inventoryView = GetComponentInParent<InventoryView>();
     inventoryView.SetItemDescription(itemInSlot);
+    equipButton.GetComponent<EqupButtonHelper>().selectedItem = itemInSlot;
   }
+  // public void OnEquipButtonClicked() {
+  //   InventoryView inventoryView = GetComponentInParent<InventoryView>();
+  //   Debug.Log(itemInSlot.itemName);
+  //   inventoryView.OnEquipButtonPressed(itemInSlot);
+  // }
 }

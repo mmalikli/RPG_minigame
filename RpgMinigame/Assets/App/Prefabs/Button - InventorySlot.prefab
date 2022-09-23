@@ -163,6 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 483866583779557567}
   itemName: {fileID: 2339021931420062415}
+  equipButton: {fileID: 0}
   itemInSlot: {fileID: 0}
   hasItem: 0
 --- !u!1 &5407921321885214071

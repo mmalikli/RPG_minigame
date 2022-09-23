@@ -15,8 +15,11 @@ public class InventoryController : MonoBehaviour
   [SerializeField] private InventoryView inventoryView;
 
   //[SerializeField] private InventorySO inventory;
-  public void OnEquipButtonPressed() {
+  public void OnEquipButtonPressed(ItemBaseSO equippedItem) {
     //Raise Event
+    Debug.Log("Equipemnt item received");
+    Debug.Log(equippedItem.itemName);
+    EventManager.Instance.Raise(new OnItemEquippedEvent(equippedItem));
   }
   private void OnItemSendToInventoryHandler(OnItemSendToInventory eventData) {
     Debug.Log("SaveItemToInventory");

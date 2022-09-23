@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Items/Weapon")]
 public class WeaponSO : ItemBaseSO
 {
-  public int damage;
+  //public int damage;
 }
