@@ -11,6 +11,9 @@ public class BaseEnemy : MonoBehaviour
   public float damageAmountText;
   private Animator damageAnim;
 
+  private bool dealDamage = true;
+ // private bool isAlive = true;
+
   public float EnemyHealth {
     get {
       return enemyHealth;
@@ -32,6 +35,21 @@ public class BaseEnemy : MonoBehaviour
     damageAnim = damageTextUI.transform.parent.GetComponent<Animator>();
   }
   // ???
+  private void OnTriggerEnter2D(Collider2D other) {
+    //Debug.Log(isAlive);
+    if(other.gameObject.CompareTag("Player") && dealDamage && other.isTrigger) {
+      TakeDamage(25);
+      dealDamage = false;
+      //StartCoroutine(damageDealBuffer());
+    }
+  }
+  private void OnTriggerExit2D(Collider2D other) {
+    dealDamage = true;
+  }
+  // IEnumerator damageDealBuffer() {
+  //   yield return new WaitForSeconds(0.5f);
+  //   dealDamage = true;
+  // }
   public void TakeDamage(int damage) {
     StopAllCoroutines();
     damageAnim.Play("Pop");
@@ -49,8 +67,13 @@ public class BaseEnemy : MonoBehaviour
     damageAnim.Play("FadeOut");
   }
   private void Death() {
-    //if()
-    gameObject.SetActive(false);
-    EventManager.Instance.Raise(new OnEnemyDeathEvent(enemyProfile));
+    if(enemyHealth <= 0) {
+      Debug.Log("Enemy is dead");
+     // isAlive = false;
+      StopAllCoroutines();
+      gameObject.SetActive(false);
+      EventManager.Instance.Raise(new OnEnemyDeathEvent(enemyProfile));
+      return;
+    }
   }
 }

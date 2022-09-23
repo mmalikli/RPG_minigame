@@ -36,10 +36,13 @@ public class QuestKillSO : QuestBaseSO
   }
 
   private void OnEnemyDeathEventHandler(OnEnemyDeathEvent eventDetails) {
+    if(objectives.Length <= 0) return;
+    
     for (int i = 0; i < objectives.Length; i++)
     {
       if (eventDetails.enemyProfile == objectives[i].requiredEnemy){
         CurrentAmount[i]++;
+        //Debug.Log(CurrentAmount);
       }
     }
     Evaluate();
