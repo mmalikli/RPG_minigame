@@ -11,7 +11,7 @@ public class QuestBaseSO : ScriptableObject
     EventManager.Instance.AddListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler); 
   }
   private void OnDisable() {
-    EventManager.Instance.AddListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler);
+    EventManager.Instance.RemoveListener<OnQuestCompletedEvent>(OnQuestCompletedEventHandler);
   }
 
   public string questName;
@@ -26,7 +26,8 @@ public class QuestBaseSO : ScriptableObject
   // Required Amount shows us a required amount of monsters
   public int[] RequiredAmount { get; set; }
 // 24 min +++ ???
-  public bool IsCompleted { get; set; } //??
+  //public bool IsCompleted { get; set; } //??
+  public bool IsCompleted = false;
 
   public CharacterProfile questGivenNPC;//???
   public DialogueBase completedQuestDialogue;
@@ -40,35 +41,46 @@ public class QuestBaseSO : ScriptableObject
   public QuestRewards rewards;
 
   public virtual void StartQuest() {
+    //if(!QuestManager.instance.inQuest) return;
 
     CurrentAmount = new int[RequiredAmount.Length];
 
   }
 
-  protected void Evaluate() {
-    //Debug.Log("Required Amount from Evaluate"+RequiredAmount[0]);
-    //Debug.Log("Current Amount from Evaluate"+CurrentAmount[0]);
-    for (int i = 0; i < RequiredAmount.Length; i++)
-    {
-      if(CurrentAmount[i]< RequiredAmount[i]) return;
-      else if (CurrentAmount[i] != 0 && CurrentAmount[i] == RequiredAmount[i]) {
-        Debug.Log("Quest is Completed");
-        for (int j = 0; j < GameManager.instance.allDialogueTriggers.Length; j++)
-        {
-          if (GameManager.instance.allDialogueTriggers[i].currentNPC == questGivenNPC) {
-            GameManager.instance.allDialogueTriggers[i].HasCompletedQuest = true;
-            GameManager.instance.allDialogueTriggers[i].CompletedQuestDialogue = completedQuestDialogue;
-            return;
-            //break;
-          }
-        }
-      }
-    }
-  }
+  // protected void Evaluate() {
+  //   //if(IsCompleted) return;
+  //   //Debug.Log("Required Amount from Evaluate"+RequiredAmount[0]);
+  //   //Debug.Log("Current Amount from Evaluate"+CurrentAmount[0]);
+  //   for (int i = 0; i < RequiredAmount.Length; i++)
+  //   {
+  //     if(CurrentAmount[i]< RequiredAmount[i]) return;
+  //     else if (CurrentAmount[i] != 0 && CurrentAmount[i] == RequiredAmount[i]) {
+  //       Debug.Log("Quest is Completed");
+  //       IsCompleted = true;       
+  //     //  Debug.Log(questName);
+  //       for (int j = 0; j < GameManager.instance.allDialogueTriggers.Length; j++)
+  //       {
+  //         if (GameManager.instance.allDialogueTriggers[i].currentNPC == questGivenNPC) {
+  //           GameManager.instance.allDialogueTriggers[i].HasCompletedQuest = true;
+  //           GameManager.instance.allDialogueTriggers[i].CompletedQuestDialogue = completedQuestDialogue;
+  //           return;
+  //           //break;
+  //         }// } else {
+  //         //   GameManager.instance.allDialogueTriggers[i].HasCompletedQuest = false;
+  //         //   //return;
+  //         // }
+  //       }
+  //     }
+  //   }
+  // }
 
   private void OnQuestCompletedEventHandler(OnQuestCompletedEvent eventDetails) {
-    Debug.Log("OnQuestRewardClaimed Event Raised");
-    Debug.Log(rewards.itemReward.itemName);
+    if(questGivenNPC != eventDetails.completedQuest.questGivenNPC) return;
+    //if (!QuestManager.instance.inQuest) return;
+    // Debug.Log("Completed Quest"+eventDetails.completedQuest.questName);
+    // Debug.Log("OnQuestRewardClaimed Event Raised");
+    // Debug.Log(rewards.itemReward.itemName);
+    //QuestManager.instance.inQuest = false;
     EventManager.Instance.Raise(new OnQuestRewardClaimedEvent(questName,rewards.itemReward,0,0));
   }
 

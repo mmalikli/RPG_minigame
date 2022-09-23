@@ -113,6 +113,7 @@ public class DialogueManager : MonoBehaviour
         break;
       case DialogueType.QUEST_COMPLETION:
         BasicDialogueParser(currentDialogue);
+        Debug.Log("Completion quest loaded");
         StartCoroutine(QuestCompleted());
         break;
     }
@@ -155,7 +156,7 @@ public class DialogueManager : MonoBehaviour
     yield return new WaitUntil(() => dialogueBox.activeSelf == false);
     if(currentDialogue is DialogueQuestSO) {
       DialogueQuestSO DQ = currentDialogue as DialogueQuestSO;
-      Debug.Log("Event raised");
+//      Debug.Log("Event raised");
       EventManager.Instance.Raise(new OnQuestReceivedEvent(DQ.quest));
     }
   }

@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class QuestLogView : MonoBehaviour
 {
+  // private void OnEnable() {
+  // //Debug.Log("Log awake");
+  // for (int i = 0; i < ; i++)
+  // {
+    
+  // }  
+  // }
+  
   [Header("Controller reference")]
   [SerializeField] private QuestLogController questLogController;
 
@@ -14,6 +22,8 @@ public class QuestLogView : MonoBehaviour
   [SerializeField] private GameObject questButtonPrefab;
   [SerializeField] private Transform content;
   //[SerializeField] private Toggle isQuestFinished;
+   [HideInInspector] public List<QuestBaseSO> QuestsInLog = new List<QuestBaseSO>();
+  [HideInInspector] public List<QuestBaseSO> completedQuests = new List<QuestBaseSO>();
 
   public void SetQuestLogUI(QuestBaseSO quest) {
     questName.text = quest.questName;
@@ -22,18 +32,27 @@ public class QuestLogView : MonoBehaviour
   public void AddQuestToLog(QuestBaseSO quest) {
     var questButton = Instantiate(questButtonPrefab, content);
     questButton.GetComponent<QuestLogButton>().SetQuest(quest);
+    QuestsInLog.Add(quest);
   }
   // <public void OnQuestLogButtonPressed() {
   //   QuestLogView questLog = GetComponent<QuestLogButton>().quest;
   //   SetQuestLogUI(quest);
   // }>
   
-  public void SetQuestToggle(string questName) {
+  public void SetQuestToggle(QuestBaseSO quest) {
   //   //isQuestFinished.isOn = true;
   //bu
-  var button = GetComponentInChildren<QuestLogButton>();
-  button.questEnd = true;
-  button.setToggle();
+  //completedQuests
+  //if(QuestsInLog.Contains(quest)) {
+  var buttons = GetComponentsInChildren<QuestLogButton>();
+  for (int i = 0; i < buttons.Length; i++)
+  {
+    if(buttons[i].quest == quest) {
+    buttons[i].questEnd = true;buttons[i].setToggle();
+    break;
+    }
   }
+  //}
+}
 
 }

@@ -8,7 +8,7 @@ public class QuestLogController : MonoBehaviour
   [Header("View reference")]
   [SerializeField] private QuestLogView questLogView;
 
-  [HideInInspector] public List<QuestBaseSO> completedQuests = new List<QuestBaseSO>();
+ //
 
   private void OnEnable() {
     EventManager.Instance.AddListener<OnQuestAcceptedEvent>(OnQuestAcceptedEventHandler);
@@ -26,8 +26,7 @@ public class QuestLogController : MonoBehaviour
   }
 
   private void OnQuestCompletedEventHandler(OnQuestCompletedEvent eventDetails) {
-    
-     questLogView.SetQuestToggle(eventDetails.completedQuest.questName);
+     questLogView.SetQuestToggle(eventDetails.completedQuest);
    }
   private void Update() {
     if(!DialogueManager.instance.isPlayerInDialogue && Input.GetKeyDown(KeyCode.Tab)) {

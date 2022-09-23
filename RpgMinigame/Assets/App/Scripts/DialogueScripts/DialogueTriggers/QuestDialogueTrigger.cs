@@ -18,7 +18,7 @@ public class QuestDialogueTrigger : DialogueTrigger
 
   public override void Interact()
   {
-    if (hasActiveQuest ) {
+    if (hasActiveQuest) {
       DialogueManager.instance.EnqueueDialogue(dialogueQuests[QuestIndex]);
     } else {
       base.Interact();
@@ -26,6 +26,10 @@ public class QuestDialogueTrigger : DialogueTrigger
     //base.Interact();
   }
   private void OnQuestAcceptedEventHandler(OnQuestAcceptedEvent eventDetails) {
+//    Debug.Log(eventDetails.acceptedQuest.questName);
+  //  Debug.Log(dialogueQuests[QuestIndex].quest.questName);
+    if(eventDetails.acceptedQuest.questGivenNPC != currentNPC) return;
+    //Debug.Log(eventDetails.acceptedQuest.questName);
     hasActiveQuest = false;
   }
 }

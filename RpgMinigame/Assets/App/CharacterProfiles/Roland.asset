@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10685c02367e05725b325d65c07b95bf, type: 3}
+  m_Name: Roland
+  m_EditorClassIdentifier: 
+  characterName: Roland the warrior
+  characterBiography: 'The warrior '
+  characterVoice: {fileID: 8300000, guid: 1585a84b26673b3879b91eefb1616554, type: 3}
+  emotionPortraits:
+    standard: {fileID: 21300000, guid: 76399bb8bc9b0c84b9e321b0f867edcf, type: 3}
+    happy: {fileID: 21300000, guid: 6907495aa5150314797afae34825fad8, type: 3}
+    angry: {fileID: 21300000, guid: 216cc4cd5f7392e2bae84c2a74a32af1, type: 3}

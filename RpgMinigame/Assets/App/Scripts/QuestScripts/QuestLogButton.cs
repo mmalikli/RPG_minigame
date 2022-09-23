@@ -26,6 +26,7 @@ public class QuestLogButton : MonoBehaviour
   public bool questEnd;
 
   public void SetQuest(QuestBaseSO _quest) {
+    //Debug.Log("!")
     quest = _quest;
     questName.text = _quest.questName;
   }

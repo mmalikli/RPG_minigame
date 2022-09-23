@@ -22,10 +22,15 @@ public class QuestManager : MonoBehaviour
   }
   
   public QuestBaseSO CurrentQuest { get; set;}
+  //public bool inQuest;
   public bool InQuestUI {get; set;}
 
   private void OnQuestAcceptedEventHandler(OnQuestAcceptedEvent eventDetails) {
     //Debug.Log("Received"+eventDetails.acceptedQuest.questName);
+    //if(CurrentQuest != null) return;
+    // if (inQuest == true) return;
+    // inQuest = true;
+
     CurrentQuest = eventDetails.acceptedQuest;
     //Debug.Log("Quest Started QM");
     CurrentQuest.StartQuest();

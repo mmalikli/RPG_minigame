@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb447a2333a511cfc9bd9ca8dd667f3d, type: 3}
+  m_Name: RolandKillQuest
+  m_EditorClassIdentifier: 
+  questName: Roland Kill Quest
+  questDescription: Kill several slimes from Roland
+  questGivenNPC: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
+  completedQuestDialogue: {fileID: 11400000, guid: 1a35d8d36db99e74189c70278f637bc0, type: 2}
+  rewards:
+    itemReward: {fileID: 11400000, guid: 689e6d69cb0639ae5828bf393d84ac96, type: 2}
+    experienceReward: 0
+    goldReward: 0
+  objectives:
+  - requiredEnemy: {fileID: 11400000, guid: 16b7796e7c590c2b29b1fac543c78f02, type: 2}
+    requiredAmount: 2

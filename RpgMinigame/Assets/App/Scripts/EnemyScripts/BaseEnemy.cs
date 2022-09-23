@@ -54,7 +54,7 @@ public class BaseEnemy : MonoBehaviour
     StopAllCoroutines();
     damageAnim.Play("Pop");
     EnemyHealth -= damage;
-    Debug.Log(EnemyHealth);
+//    Debug.Log(EnemyHealth);
     damageAmountText += damage;
     damageTextUI.text = damageAmountText.ToString();
 
@@ -68,7 +68,7 @@ public class BaseEnemy : MonoBehaviour
   }
   private void Death() {
     if(enemyHealth <= 0) {
-      Debug.Log("Enemy is dead");
+  //    Debug.Log("Enemy is dead");
      // isAlive = false;
       StopAllCoroutines();
       gameObject.SetActive(false);

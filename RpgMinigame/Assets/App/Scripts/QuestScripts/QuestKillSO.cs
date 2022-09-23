@@ -34,6 +34,33 @@ public class QuestKillSO : QuestBaseSO
     }
     base.StartQuest();
   }
+    protected void Evaluate() {
+    //if(IsCompleted) return;
+    //Debug.Log("Required Amount from Evaluate"+RequiredAmount[0]);
+    //Debug.Log("Current Amount from Evaluate"+CurrentAmount[0]);
+    for (int i = 0; i < RequiredAmount.Length; i++)
+    {
+      if(CurrentAmount[i]< RequiredAmount[i]) return;
+      else if (CurrentAmount[i] != 0 && CurrentAmount[i] == RequiredAmount[i]) {
+        Debug.Log("Quest is Completed");
+        IsCompleted = true;       
+      //  Debug.Log(questName);
+        for (int j = 0; j < GameManager.instance.allDialogueTriggers.Length; j++)
+        {
+          //Debug.Log(GameManager.instance.allDialogueTriggers)
+          if (GameManager.instance.allDialogueTriggers[j].currentNPC == questGivenNPC) {
+            GameManager.instance.allDialogueTriggers[j].HasCompletedQuest = true;
+            GameManager.instance.allDialogueTriggers[j].CompletedQuestDialogue = completedQuestDialogue;
+            //return;
+            break;
+          }// } else {
+          //   GameManager.instance.allDialogueTriggers[i].HasCompletedQuest = false;
+          //   //return;
+          // }
+        }
+      }
+    }
+  }
 
   private void OnEnemyDeathEventHandler(OnEnemyDeathEvent eventDetails) {
     if(objectives.Length <= 0) return;
@@ -50,8 +77,9 @@ public class QuestKillSO : QuestBaseSO
 
   //private
   private void OnQuestCompletedEventHandler(OnQuestCompletedEvent eventDetails) {
-    Debug.Log("OnQuestRewardClaimed Event Raised");
-    Debug.Log(rewards.itemReward.itemName);
+    //Debug.Log("OnQuestRewardClaimed Event Raised");
+    //Debug.Log(rewards.itemReward.itemName);
+    if(questGivenNPC != eventDetails.completedQuest.questGivenNPC) return;
     EventManager.Instance.Raise(new OnQuestRewardClaimedEvent(questName,rewards.itemReward,0,0));
   }
 }

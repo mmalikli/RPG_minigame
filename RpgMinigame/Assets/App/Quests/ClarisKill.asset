@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb447a2333a511cfc9bd9ca8dd667f3d, type: 3}
-  m_Name: KillQuest
+  m_Name: ClarisKill
   m_EditorClassIdentifier: 
-  questName: The Great Slime Slayer
-  questDescription: Help Claris and kill two slimes
+  questName: Kill tow slimes
+  questDescription: Kill two slimes for Claris
+  IsCompleted: 0
   questGivenNPC: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
-  completedQuestDialogue: {fileID: 11400000, guid: 822c7f196b3a963dbb3623e628a7ffe2, type: 2}
+  completedQuestDialogue: {fileID: 11400000, guid: 39933df33709c052c9c4f08e1ab6722e, type: 2}
   rewards:
-    itemReward: {fileID: 11400000, guid: d53964f2669965f7da1934756e9ae0f1, type: 2}
+    itemReward: {fileID: 11400000, guid: 8f5b1d174c1834595944caa2275ed3ef, type: 2}
     experienceReward: 0
     goldReward: 0
   objectives:
