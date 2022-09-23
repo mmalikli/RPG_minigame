@@ -57,7 +57,7 @@ namespace OptMenuView {
     public void OnMusicVolChanged() {
       Debug.Log(musicSlider.value);
       musicLabel.text = (musicSlider.value + 80).ToString();
-      audioMixer.SetFloat("Music", musicSlider.value);
+      audioMixer.SetFloat("Music", Mathf.Clamp(musicSlider.value,-40f,-10f));
       optionMenuController.OnMusicVolChanged(musicSlider.value);
     }
     public void SetMusicVol(float musicSliderValue ) {
@@ -66,7 +66,7 @@ namespace OptMenuView {
       Debug.Log(musicSliderValue);
       musicLabel.text = (musicSliderValue + 80).ToString();
       musicSlider.value = musicSliderValue;
-      audioMixer.SetFloat("Music", musicSliderValue);
+      audioMixer.SetFloat("Music", Mathf.Clamp(musicSlider.value,-40f,-10f));
       float test;
       audioMixer.GetFloat("Music",out test);
       Debug.Log(test);
@@ -74,7 +74,7 @@ namespace OptMenuView {
     public void OnSFXVolChanged() {
       sfxLabel.text = (sfxSlider.value + 80 ).ToString();
       //sfxSlider.value = sfx
-      audioMixer.SetFloat("SFX", sfxSlider.value);
+      audioMixer.SetFloat("SFX", Mathf.Clamp(sfxSlider.value,-40f,-10f));
       optionMenuController.OnSFXVolChanged(sfxSlider.value);
     }
     public void SetSFXVol(float sfxSliderValue ) {
@@ -83,7 +83,7 @@ namespace OptMenuView {
       //Debug.Log()
       sfxLabel.text = (sfxSliderValue + 80).ToString();
       sfxSlider.value = sfxSliderValue;
-      audioMixer.SetFloat("SFX", sfxSliderValue);
+      audioMixer.SetFloat("SFX", Mathf.Clamp(sfxSlider.value,-40f,-10f));
     }
   }
 }
