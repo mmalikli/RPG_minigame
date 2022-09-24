@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Roland Kill Quest
   questDescription: Kill several slimes from Roland
+  IsCompleted: 1
   questGivenNPC: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
   completedQuestDialogue: {fileID: 11400000, guid: 1a35d8d36db99e74189c70278f637bc0, type: 2}
   rewards:
@@ -22,4 +23,4 @@ MonoBehaviour:
     goldReward: 0
   objectives:
   - requiredEnemy: {fileID: 11400000, guid: 16b7796e7c590c2b29b1fac543c78f02, type: 2}
-    requiredAmount: 2
+    requiredAmount: 4

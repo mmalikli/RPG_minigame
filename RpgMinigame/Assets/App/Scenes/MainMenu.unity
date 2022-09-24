@@ -1563,27 +1563,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb1dcfeb88a66e4c8f12e1c61c9895b, type: 3}
---- !u!1 &574790276 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7392688044435845411, guid: 0bb1dcfeb88a66e4c8f12e1c61c9895b, type: 3}
-  m_PrefabInstance: {fileID: 574790275}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &574790277 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7392688044814998332, guid: 0bb1dcfeb88a66e4c8f12e1c61c9895b, type: 3}
-  m_PrefabInstance: {fileID: 574790275}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &574790278 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7392688043931297833, guid: 0bb1dcfeb88a66e4c8f12e1c61c9895b, type: 3}
-  m_PrefabInstance: {fileID: 574790275}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &574790281 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7392688044435845408, guid: 0bb1dcfeb88a66e4c8f12e1c61c9895b, type: 3}
@@ -2314,9 +2293,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstStart: GamePlayScene
-  loadingScreen: {fileID: 574790276}
-  loadingIcon: {fileID: 574790277}
-  loadingText: {fileID: 574790278}
 --- !u!1 &1296220113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3769,6 +3745,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 964886056, guid: ae3cfb317d216ee41876c9a16acbf05d, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 967413175, guid: ae3cfb317d216ee41876c9a16acbf05d, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 985579998, guid: ae3cfb317d216ee41876c9a16acbf05d, type: 3}

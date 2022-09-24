@@ -16,6 +16,6 @@ MonoBehaviour:
   completedQuest: {fileID: 0}
   characterLines:
   - character: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
-    text: Please kill two slimes for me
+    text: Please kill five  slimes for me
     characterEmotion: 2
   quest: {fileID: 11400000, guid: eb49a96fa068ed5989144ffa8c9c50cc, type: 2}

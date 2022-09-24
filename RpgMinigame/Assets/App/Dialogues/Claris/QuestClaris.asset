@@ -18,4 +18,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
     text: Can you help me and kill two slimes?
     characterEmotion: 2
+  - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
+    text: You have to go west to find SLIMES.
+    characterEmotion: 0
   quest: {fileID: 11400000, guid: f51d67441a3a19309b12210b2a2fa7d2, type: 2}

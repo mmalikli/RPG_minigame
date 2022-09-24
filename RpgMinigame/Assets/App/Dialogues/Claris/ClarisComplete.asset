@@ -18,3 +18,9 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
     text: Thank you for killing this slimes
     characterEmotion: 1
+  - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
+    text: 'You can find my brother south in town . '
+    characterEmotion: 1
+  - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
+    text: BYE
+    characterEmotion: 1
