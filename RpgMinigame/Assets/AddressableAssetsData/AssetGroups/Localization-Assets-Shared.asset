@@ -22,6 +22,11 @@ MonoBehaviour:
       Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 850d16ae51e93644b8de3695201e1643
+    m_Address: Assets/App/LocalizationSettings/LocalTable/PauseMenu_Table Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 427680f8b43d7d758a945e2bc14e0e66, type: 2}
   m_SchemaSet:

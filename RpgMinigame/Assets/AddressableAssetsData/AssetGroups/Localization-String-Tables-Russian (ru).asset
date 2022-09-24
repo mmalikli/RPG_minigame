@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     - Preload
+  - m_GUID: 5083e5661754e42428994a0e67ca4a6d
+    m_Address: PauseMenu_Table_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 427680f8b43d7d758a945e2bc14e0e66, type: 2}
   m_SchemaSet:
