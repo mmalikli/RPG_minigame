@@ -21,7 +21,7 @@ public class DialogueTrigger : Interactable
   public override void Interact()
   {
     if(!DialogueManager.instance.isPlayerInDialogue || !DialogueManager.instance.isPlayerInDialogueOption) {
-      Debug.Log(CompletedQuestDialogue.completedQuest.questName);
+      //Debug.Log(CompletedQuestDialogue.completedQuest.questName);
       if(HasCompletedQuest) {
         //Debug.Log
         DialogueManager.instance.EnqueueDialogue(CompletedQuestDialogue);
