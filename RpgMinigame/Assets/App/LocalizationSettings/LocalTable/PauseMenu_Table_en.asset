@@ -34,5 +34,9 @@ MonoBehaviour:
     m_Localized: Quit
     m_Metadata:
       m_Items: []
+  - m_Id: 35416369803264
+    m_Localized: Close
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
