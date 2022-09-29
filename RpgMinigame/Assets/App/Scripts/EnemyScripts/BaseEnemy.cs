@@ -9,19 +9,34 @@ public class BaseEnemy : MonoBehaviour
   private float enemyHealth;
   private Text damageTextUI;
   public float damageAmountText;
+  public DetectionZone detectionZone;
+  public float moveSpeed;
   private Animator damageAnim;
+  Rigidbody2D rb;
+  bool isAlive = true;
+  [SerializeField] private Animator animator;
 
   private bool dealDamage = true;
- // private bool isAlive = true;
+    // private bool isAlive = true;
 
-  public float EnemyHealth {
+    private void FixedUpdate()
+    {
+        if (detectionZone.detectedObjs.Count > 0)
+        {
+            Vector2 direction = (detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
+
+            rb.AddForce(direction * moveSpeed * Time.deltaTime);
+        }
+    }
+    public float EnemyHealth {
     get {
       return enemyHealth;
     }
     set {
       enemyHealth = value;
+
       if(enemyHealth <= 0) {
-        Death();
+                Defeated();
       }
     }
   }
@@ -29,10 +44,12 @@ public class BaseEnemy : MonoBehaviour
   public EnemyProfile enemyProfile;
 
   private void Start() {
+    rb = GetComponent<Rigidbody2D>();
     EnemyHealth = enemyProfile.health;
     gameObject.tag = "Enemy";
     damageTextUI = GetComponentInChildren<Text>();
     damageAnim = damageTextUI.transform.parent.GetComponent<Animator>();
+        animator.SetBool("isAlive", isAlive);
   }
   // ???
   private void OnTriggerEnter2D(Collider2D other) {
@@ -53,6 +70,7 @@ public class BaseEnemy : MonoBehaviour
   public void TakeDamage(int damage) {
     StopAllCoroutines();
     damageAnim.Play("Pop");
+    animator.SetTrigger("hit");
     EnemyHealth -= damage;
 //    Debug.Log(EnemyHealth);
     damageAmountText += damage;
@@ -66,9 +84,16 @@ public class BaseEnemy : MonoBehaviour
     yield return new WaitForSeconds(1.5f);
     damageAnim.Play("FadeOut");
   }
+    //for triggering slime death animation
+  private void Defeated()
+    {
+        animator.SetBool("isAlive", false);
+    }
+
+    //Death()  triggered in death animation
   private void Death() {
     if(enemyHealth <= 0) {
-  //    Debug.Log("Enemy is dead");
+      Debug.Log("Enemy is dead");
      // isAlive = false;
       StopAllCoroutines();
       gameObject.SetActive(false);
