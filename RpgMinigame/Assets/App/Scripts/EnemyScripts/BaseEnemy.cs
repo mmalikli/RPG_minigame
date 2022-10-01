@@ -9,6 +9,7 @@ public class BaseEnemy : MonoBehaviour
   private float enemyHealth;
   private Text damageTextUI;
   public float damageAmountText;
+  public CircleCollider2D zone;
   public DetectionZone detectionZone;
   public float moveSpeed;
   private Animator damageAnim;
@@ -49,16 +50,23 @@ public class BaseEnemy : MonoBehaviour
     gameObject.tag = "Enemy";
     damageTextUI = GetComponentInChildren<Text>();
     damageAnim = damageTextUI.transform.parent.GetComponent<Animator>();
-        animator.SetBool("isAlive", isAlive);
+    animator.SetBool("isAlive", isAlive);
   }
   // ???
   private void OnTriggerEnter2D(Collider2D other) {
     //Debug.Log(isAlive);
-    if(other.gameObject.CompareTag("Player") && dealDamage && other.isTrigger) {
-      TakeDamage(GameManager.instance.playerDamage);
-      dealDamage = false;
-      //StartCoroutine(damageDealBuffer());
+    // We must avoid the Detection zone trigger
+    //if(other.IsTouching(zone)) return;
+    if(Vector2.Distance(rb.position, new Vector2(GameManager.instance.player.position.x,GameManager.instance.player.position.y)) < 1f) {
+      if(other.gameObject.CompareTag("Player") && dealDamage && other.isTrigger) {
+        // Damage is handled by Game Manager
+      // Debug.Log(other.gameObject.CompareTag("DetectionZone"));
+        TakeDamage(GameManager.instance.playerDamage);
+        dealDamage = false;
+        //StartCoroutine(damageDealBuffer());
+      }
     }
+
   }
   private void OnTriggerExit2D(Collider2D other) {
     dealDamage = true;
