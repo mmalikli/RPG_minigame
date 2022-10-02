@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10685c02367e05725b325d65c07b95bf, type: 3}
+  m_Name: Solider
+  m_EditorClassIdentifier: 
+  characterName: Jack Reacher
+  characterBiography: 
+  characterVoice: {fileID: 8300000, guid: 03688f3ab44f0ebb38bf92943bada3cb, type: 3}
+  emotionPortraits:
+    standard: {fileID: 21300000, guid: f919a270fe0621ed28a01336ac998766, type: 3}
+    happy: {fileID: 21300000, guid: 58119e71546ef8e41b8fe7d855c139e9, type: 3}
+    angry: {fileID: 21300000, guid: 8bae82fb2b161e11b89a86b812c93547, type: 3}

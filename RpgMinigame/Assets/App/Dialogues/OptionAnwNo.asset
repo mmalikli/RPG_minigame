@@ -19,9 +19,12 @@ MonoBehaviour:
     text: Yes, I understand your disappointment. Our village once prospered
     characterEmotion: 0
   - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
-    text: But now our village is suffering from monsters
-    characterEmotion: 0
+    text: But now our village is suffering from monsters. There are not a lot of
+      fighters to help us. Town people are so afraid.I am seeing you want to help.You
+      are really like your father.
+    characterEmotion: 2
   - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
-    text: Nowdays life is tought in our villlage..Please ask Claris she will need
-      some help.
+    text: Indeed . Nowdays life is tought in our villlage..Please ask Claris she
+      will need some help.Watch for her  near the bridge. She will be happy to see
+      you again. .
     characterEmotion: 0

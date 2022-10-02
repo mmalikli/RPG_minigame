@@ -16,11 +16,14 @@ MonoBehaviour:
   completedQuest: {fileID: 11400000, guid: f51d67441a3a19309b12210b2a2fa7d2, type: 2}
   characterLines:
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
-    text: Thank you for killing this slimes
+    text: 'Thank you for killing this slimes. '
     characterEmotion: 1
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
-    text: 'You can find my brother south in town . '
+    text: About I said you have changed , But you are same from inside.
     characterEmotion: 1
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
-    text: BYE
+    text: You can find my brother south in town . He also need some help
+    characterEmotion: 1
+  - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
+    text: Thanks again . BYE
     characterEmotion: 1

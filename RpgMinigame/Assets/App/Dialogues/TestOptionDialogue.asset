@@ -16,8 +16,12 @@ MonoBehaviour:
   completedQuest: {fileID: 0}
   characterLines:
   - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
-    text: Greetings, traveller !
-    characterEmotion: 0
+    text: 'Greetings, Artyom !
+
+      It is good to see you are  back again. After
+      what happened in past.It''s okay to look back at your past. Just don''t stare.
+      I am seeing you grown up .'
+    characterEmotion: 1
   - character: {fileID: 11400000, guid: e2a729ba9bbf9e71b9580a86844b87dc, type: 2}
     text: As you can see, things are not going well for us.
     characterEmotion: 0

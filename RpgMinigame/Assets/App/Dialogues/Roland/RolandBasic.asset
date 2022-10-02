@@ -16,5 +16,6 @@ MonoBehaviour:
   completedQuest: {fileID: 0}
   characterLines:
   - character: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
-    text: Hello I am Roland
+    text: Nice to see you again . I am happy that I have someone whocan  teach me
+      to fight .I have  alot of things to learn from you.
     characterEmotion: 0

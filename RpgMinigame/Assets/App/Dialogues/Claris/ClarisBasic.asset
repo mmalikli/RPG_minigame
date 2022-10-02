@@ -16,5 +16,5 @@ MonoBehaviour:
   completedQuest: {fileID: 0}
   characterLines:
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
-    text: Hello I am Claris
+    text: Hey! Artyom . Nice to see you around.
     characterEmotion: 0

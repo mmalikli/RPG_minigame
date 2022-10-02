@@ -16,9 +16,16 @@ MonoBehaviour:
   completedQuest: {fileID: 0}
   characterLines:
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
-    text: Can you help me and kill two slimes?
+    text: Hello Artyom . My father said but i didn't believe you came back .I was
+      afraid you never will came back. It looks like you have changed so much . A
+      lot of things happened after you went. Same monsters attacked your house  are
+      in everywhere.  ... Sorry . I forget  not  to mention  .. . It is true that
+      some times you can not run from your past
     characterEmotion: 2
   - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
-    text: You have to go west to find SLIMES.
+    text: Can you help me to kill  those slimes. You have to go west to find SLIMES.
+    characterEmotion: 0
+  - character: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}
+    text: You have  to cross bridge and go west to find SLIMES.
     characterEmotion: 0
   quest: {fileID: 11400000, guid: f51d67441a3a19309b12210b2a2fa7d2, type: 2}

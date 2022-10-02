@@ -16,6 +16,16 @@ MonoBehaviour:
   completedQuest: {fileID: 0}
   characterLines:
   - character: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
-    text: Please kill five  slimes for me
+    text: 'The child who went to be strong warrior so he can revenge death of his
+      family. I can see you have  learned a lot of things. I wish if I would be like
+      you . But I am so afraid , I can not  even help my own people . I am afraid
+      they are going to see my true self. '
+    characterEmotion: 2
+  - character: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
+    text: Can you help me to kill those monsters.
+    characterEmotion: 1
+  - character: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
+    text: If you leave town from west . You can find them at end of the road.Watch
+      yourself .
     characterEmotion: 2
   quest: {fileID: 11400000, guid: eb49a96fa068ed5989144ffa8c9c50cc, type: 2}

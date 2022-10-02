@@ -18,3 +18,14 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
     text: Thank you for killing those slimes
     characterEmotion: 1
+  - character: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
+    text: And can you keep the things we talked between us.
+    characterEmotion: 1
+  - character: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
+    text: I heard there is an old, abandoned castle occupied by way more strong Monsters 
+      . It will be good for you to use your new sword. But their skin so hard , somethimes
+      they do  not even feel hits . You have to find their weak spots.
+    characterEmotion: 1
+  - character: {fileID: 11400000, guid: 18e0a1982ef05b1f084af0d1ed17f87d, type: 2}
+    text: You can also talk with town people
+    characterEmotion: 1
