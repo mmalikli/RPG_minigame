@@ -62,7 +62,7 @@ public class BaseEnemy : MonoBehaviour
     //Debug.Log(isAlive);
     // We must avoid the Detection zone trigger
     //if(other.IsTouching(zone)) return;
-    if(Vector2.Distance(rb.position, new Vector2(GameManager.instance.player.position.x,GameManager.instance.player.position.y)) < .78f) {
+    if(Vector2.Distance(rb.position, new Vector2(GameManager.instance.player.position.x,GameManager.instance.player.position.y)) < 1.5f) {
       if(other.gameObject.CompareTag("Player")  && dealDamage && other.isTrigger) {
        // Damage is handled by Game Manager
        // Debug.Log(other.gameObject.CompareTag("DetectionZone"));

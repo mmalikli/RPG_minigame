@@ -6,8 +6,8 @@ using UnityEngine;
 public class InventorySO : ScriptableObject
 {
   private void OnEnable() {
-    Debug.Log("Inventory Loaded and Cleared for Testing purposes");
-    itemHolders.Clear();
+    //Debug.Log("Inventory Loaded and Cleared for Testing purposes");
+    //itemHolders.Clear();
     //itemHolders = new List<ItemBaseSO>();
   }
   // private void OnDisable() {
