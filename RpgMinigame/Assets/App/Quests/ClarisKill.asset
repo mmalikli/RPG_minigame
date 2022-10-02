@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb447a2333a511cfc9bd9ca8dd667f3d, type: 3}
   m_Name: ClarisKill
   m_EditorClassIdentifier: 
-  questName: Kill tow slimes
+  questName: Kill two slimes
   questDescription: Kill two slimes for Claris
   IsCompleted: 0
   questGivenNPC: {fileID: 11400000, guid: ada9307f2b9dd01488a7c80285c0c05b, type: 2}

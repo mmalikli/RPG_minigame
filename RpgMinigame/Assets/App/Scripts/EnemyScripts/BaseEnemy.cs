@@ -20,7 +20,8 @@ public class BaseEnemy : MonoBehaviour
   [SerializeField] private Animator animator;
 
   private bool dealDamage = true;
-  private bool isDead = false;
+  //private bool isDead = false;
+  private bool isEventRaised = false;
 
     private void FixedUpdate()
     {
@@ -39,7 +40,7 @@ public class BaseEnemy : MonoBehaviour
       enemyHealth = value;
 
       if(enemyHealth <= 0) {
-        isDead = true;
+        //isDead = true;
                 Defeated();
       }
     }
@@ -114,7 +115,7 @@ public class BaseEnemy : MonoBehaviour
 
         if(damageable != null)
         {
-            damageable.OnHit(enemyDamage);
+          damageable.OnHit(enemyDamage);
         }
     }
 
@@ -122,11 +123,14 @@ public class BaseEnemy : MonoBehaviour
     private void Death() {
     if(enemyHealth <= 0) {
       Debug.Log("Enemy is dead");
+      gameObject.SetActive(false);
      // isAlive = false;
       StopAllCoroutines();
-      gameObject.SetActive(false);
-      if(isDead) return;
-      EventManager.Instance.Raise(new OnEnemyDeathEvent(enemyProfile));
+      if(!isEventRaised) {
+        EventManager.Instance.Raise(new OnEnemyDeathEvent(enemyProfile));
+        isEventRaised = true;
+      }
+      Debug.Log("Event Raised");
       return;
     }
   }

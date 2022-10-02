@@ -156,7 +156,7 @@ public class DialogueManager : MonoBehaviour
     yield return new WaitUntil(() => dialogueBox.activeSelf == false);
     if(currentDialogue is DialogueQuestSO) {
       DialogueQuestSO DQ = currentDialogue as DialogueQuestSO;
-//      Debug.Log("Event raised");
+      Debug.Log("Quest Received");
       EventManager.Instance.Raise(new OnQuestReceivedEvent(DQ.quest));
     }
   }

@@ -19,6 +19,6 @@ MonoBehaviour:
     text: 'Hey youngling.  Come here . I want to thank you for every think . It is
       good to have someone like you in town . '
     characterEmotion: 0
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: 9a046939c50c2294d926e1021caf8ae2, type: 2}
     text: "Have you saw Roland around ?\n Never mind."
     characterEmotion: 0

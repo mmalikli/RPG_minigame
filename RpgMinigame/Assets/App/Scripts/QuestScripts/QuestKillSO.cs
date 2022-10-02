@@ -36,10 +36,11 @@ public class QuestKillSO : QuestBaseSO
   }
     protected void Evaluate() {
     //if(IsCompleted) return;
-    //Debug.Log("Required Amount from Evaluate"+RequiredAmount[0]);
-    //Debug.Log("Current Amount from Evaluate"+CurrentAmount[0]);
+    Debug.Log("Required Amount from Evaluate"+RequiredAmount[0]);
+    Debug.Log("Current Amount from Evaluate"+CurrentAmount[0]);
     for (int i = 0; i < RequiredAmount.Length; i++)
     {
+
       if(CurrentAmount[i]< RequiredAmount[i]) return;
       else if (CurrentAmount[i] != 0 && CurrentAmount[i] == RequiredAmount[i]) {
         Debug.Log("Quest is Completed");
@@ -68,6 +69,7 @@ public class QuestKillSO : QuestBaseSO
     for (int i = 0; i < objectives.Length; i++)
     {
       if (eventDetails.enemyProfile == objectives[i].requiredEnemy){
+        if(CurrentAmount == null) return;
         CurrentAmount[i]++;
         //Debug.Log(CurrentAmount);
       }
