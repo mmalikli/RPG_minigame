@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 8863681327529254670}
   m_Layer: 0
   m_Name: slime_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,9 +379,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3000ee1211281416bbb2c1640c05f438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyDamage: 1
+  knockbackForce: 900
   damageAmountText: 0
+  zone: {fileID: 7902381030553735449}
   detectionZone: {fileID: 3155789340723447522}
-  moveSpeed: 5000
+  moveSpeed: 1000
   animator: {fileID: 1040822205357926391}
   enemyProfile: {fileID: 11400000, guid: 16b7796e7c590c2b29b1fac543c78f02, type: 2}
 --- !u!58 &1488858258
@@ -471,7 +474,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 50
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
