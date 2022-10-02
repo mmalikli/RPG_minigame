@@ -20,5 +20,5 @@ MonoBehaviour:
       good to have someone like you in town . '
     characterEmotion: 1
   - character: {fileID: 11400000, guid: 9a046939c50c2294d926e1021caf8ae2, type: 2}
-    text: "Have you saw Roland around .\n Never mind."
+    text: "Have you saw Roland around ?\n Never mind."
     characterEmotion: 1
